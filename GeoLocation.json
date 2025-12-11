@@ -1,0 +1,45 @@
+{
+   "result": {
+      "input": {
+         "address": {
+            "zip": "20176",
+            "city": "Leesburg",
+            "street": "13951 Freedom Center Dr",
+            "state": "VA"
+         },
+         "benchmark": {
+            "isDefault": true,
+            "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+            "id": "4",
+            "benchmarkName": "Public_AR_Current"
+         }
+      },
+      "addressMatches": [
+         {
+            "tigerLine": {
+               "side": "L",
+               "tigerLineId": "62352113"
+            },
+            "coordinates": {
+               "x": -77.55124589211,
+               "y": 39.229277898825
+            },
+            "addressComponents": {
+               "zip": "20176",
+               "streetName": "FREEDOM CENTER",
+               "preType": "",
+               "city": "LEESBURG",
+               "preDirection": "",
+               "suffixDirection": "",
+               "fromAddress": "13999",
+               "state": "VA",
+               "suffixType": "LN",
+               "toAddress": "13801",
+               "suffixQualifier": "",
+               "preQualifier": ""
+            },
+            "matchedAddress": "13951 FREEDOM CENTER LN, LEESBURG, VA, 20176"
+         }
+      ]
+   }
+}

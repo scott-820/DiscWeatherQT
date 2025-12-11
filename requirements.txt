@@ -1,0 +1,6 @@
+sys
+requests
+json
+matplotlib
+dateutil
+PyQt5
