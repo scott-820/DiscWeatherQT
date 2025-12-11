@@ -37,7 +37,6 @@ class MainWindow(QMainWindow):
         # Need a flag to store if current custom address was valid or not
         self.customAddressValid = False
         # Need a place to hold working courseName and Lat / Lon values
-        #self.validLocation = False
         self.courseName = 'No Entry'
         self.lat = None
         self.lon = None
@@ -179,7 +178,6 @@ class MainWindow(QMainWindow):
         fnt = self.hoursSpin.font()
         fnt.setPointSize(12)
         self.hoursSpin.setFont(fnt)
-        #self.hoursSpin.setFont(QFont('Helvetica', 16))
         self.hoursSpin.valueChanged.connect(self.hoursSpinValChanged)
         self.replotBtn = QPushButton("Re-Plot")
         self.replotBtn.setStyleSheet(myStyles.rpltStyle)
@@ -332,7 +330,7 @@ class MainWindow(QMainWindow):
         else:
             Zip = int(zip)
             self.custLabel.setText("Address Submitted")
-        # Submit to get GeoLocation method
+        # Submit to getGeoLocation method
         match, Lt, Ln = self.getGeoLocation(street, city, state, Zip)
         if match:
             self.custLabel.setText("GeoCoding Successful")
@@ -663,7 +661,6 @@ class MainWindow(QMainWindow):
         self.sc.draw()
         self.sc.setVisible(True)
         
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
