@@ -32,10 +32,12 @@ class MainWindow(QMainWindow):
         self.setGeometry(50, 50, 1900, 1200)
 
         # Need a favorites dictionary - 'courseName': (lat,lon)
-        self.favesExist = False
         self.faves = {}
+        self.favesExist = False
+        
         # Need a flag to store if current custom address was valid or not
         self.customAddressValid = False
+
         # Need a place to hold working courseName and Lat / Lon values
         self.courseName = 'No Entry'
         self.lat = None
@@ -66,19 +68,19 @@ class MainWindow(QMainWindow):
     def initUI(self):
         CentralLayout = QVBoxLayout()   # Holds all layouts and widgets. Will be applied to the Central Widget of MainWindow
 
-        # Make radio buttons
+        # Make radio buttons and button group
         self.radioFave = QRadioButton("Use Favorites")
         self.radioFave.setStyleSheet("font-size: 12px; color: #111B69; font-weight: bold")
         self.radioFave.toggled.connect(self.faveToggled)
         self.radioCust = QRadioButton("Use Custom Address")
         self.radioCust.setStyleSheet("font-size: 12px; color: #111B69; font-weight: bold")
         self.radioCust.toggled.connect(self.custToggled)
-
         radio_group = QButtonGroup(self)
         radio_group.addButton(self.radioFave)
         radio_group.addButton(self.radioCust)
 
-        controlsLayout = QHBoxLayout()  # Holds the 3 control Frames: Favorites, Custom and Launch
+        controlsLayout = QHBoxLayout()      # Holds the 3 control Frames: Favorites, Custom and Launch
+        
         # Make the Favorites box
         favoritesLayout = QVBoxLayout()
         faveTopLayout = QHBoxLayout()       # Holds the Faves radio button and the Faves Label
@@ -120,13 +122,11 @@ class MainWindow(QMainWindow):
         self.submitBtn.setFixedWidth(130)
         self.submitBtn.setEnabled(False)
         self.submitBtn.clicked.connect(self.submitBtnClicked)
-        # Style the GeoBtn here
 
         self.saveFavesBtn = QPushButton("Save to Faves")
         self.saveFavesBtn.setFixedWidth(100)
         self.saveFavesBtn.setEnabled(False)
         self.saveFavesBtn.clicked.connect(self.save2Faves)
-        # Style saveFavesBtn here
         custButtonLayout.addWidget(self.submitBtn)
         custButtonLayout.addWidget(self.saveFavesBtn)
         
@@ -517,7 +517,7 @@ class MainWindow(QMainWindow):
             json.dump(self.jsonResponse, f, indent=3)
 
     def getDWData(self):
-        # Extract data from fcstJSON for the number of datapoints set by config.numHours
+        # Extract data from fcstJSON for the number of datapoints set by self.NUMHRS
         self.temp = []
         self.wind = []
         self.precip = []
@@ -539,8 +539,6 @@ class MainWindow(QMainWindow):
             w = int(w1[0])
             self.wind.append(w)
             self.scores.append(self.getScore(t,w,p,d or self.nightCalc)) #'d or self.nightCalc' lets setting override daylight info in forecast data
-            #self.scores.append(50)
-
     
     def getScore(self,temp, wind, precip, daylight):
         '''
