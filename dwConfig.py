@@ -4,7 +4,7 @@ daylightOnly = True     # Set to false to allow night predictions for glow disc 
 
 # Thresholds for calculating hourly DiscWeather scores:
 
-LoT = 45        # Below which temp score will be 0. Above which temp score increases to max at MidLoT.
+LoT = 40        # Below which temp score will be 0. Above which temp score increases to max at MidLoT.
 MidLoT = 70     # Above which temp score will be max
 MidHiT = 83     # Above which temp score attenuates to 0 at HiT
 HiT = 95        # Above which temp score will be 0
