@@ -1,4 +1,4 @@
-# DiscWeather QT: Weather Quality Prediction for Disc Golf
+# DiscWeatherQT: Weather Quality Prediction for Disc Golf
 
 ## About DiscWeather
 
@@ -135,7 +135,7 @@ where:
 ```
 #CourseName,Latitude,Longitude
 Franklin Park,39.1302,-77.7435
-Clarkes Gap,39.2292,-77.5505
+Clark's Run,39.2292,-77.5505
 Ditto Farms,39.6146,-77.6711
 Seneca Creek,39.1368,-77.2597
 Heritage Park,39.5025,-77.3493
