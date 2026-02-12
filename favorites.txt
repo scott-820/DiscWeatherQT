@@ -13,5 +13,4 @@ Emmitsburg,39.7036,-77.3327
 Hal and Berni Hanson,39.9819,-77.5459
 Bull Run,38.8077,-77.4775
 Burke Lake,38.7637,-77.3042
-14231 Courtney Meadow Pl,39.2245,-77.5875
 13951 Freedom Center Dr,39.2293,-77.5512
